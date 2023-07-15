@@ -121,8 +121,22 @@ php artisan make:migration create_NombreDeLaTabla_table
 ```
 php artisan migrate
 ```
-
+- Para hacer un rollback de la migracion
+```
+php artisan migrate:rollback
+```
 - Para hacer un rollback de todas las migraciones usamos 
 ```
 php artisan migrate:refresh
+```
+
+## Model
+- Para crear un modelo
+```
+php artisan make:model Note
+```
+
+- Para crear un modelo y migracion
+```
+php artisan make:model Author --migration
 ```
