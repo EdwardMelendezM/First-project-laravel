@@ -1,0 +1,10 @@
+<div>
+  <h3>{{$title}}</h3>
+  <p>
+    {{$content}}
+  </p>
+  <img
+    src="{{asset('assets/images/contornos.jpg')}}"
+    alt="contornos"
+  >
+</div>
