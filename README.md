@@ -3,6 +3,11 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 
+- Iniciar el servidor con
+```
+php artisan server
+```
+
 
 ## Conceptos basicos front end
 -  Esto incluye el contenido donde se llame - solo se pasa la direccion del archivo
@@ -101,4 +106,23 @@ Route::get('/services/example', function () {
     return view('services');
 });
 
+```
+## Migraciones
+- La migracion contempla la conexion a la base de datos, la creacion de tablas y conexion
+- Para conectarnos a la base de datos usamos
+```
+php artisan migrate
+```
+- Para crear una migracion usamos
+```
+php artisan make:migration create_NombreDeLaTabla_table
+```
+- Para realizar una nueva migracion usamos
+```
+php artisan migrate
+```
+
+- Para hacer un rollback de todas las migraciones usamos 
+```
+php artisan migrate:refresh
 ```
