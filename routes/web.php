@@ -1,27 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/services/example', function () {
-    return view('services');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
+Route::get('/', [UserController::class,'index'])->name('index');
 
-
-// View muestra datos estaticos
-// Route::view()
-Route::view('/landing/about', 'landing.home')->name('landingAbout');
-Route::view('/landing/home', 'landing.home')->name('landingHome');
-
-// Obtiene los datos para la pagina no estatica
-// Route::get()
-// Route::post()
-// Route::put()
-// Route::delete()
-// Route::patch()
+Route::get('/create', [UserController::class,'create'])->name('create');
