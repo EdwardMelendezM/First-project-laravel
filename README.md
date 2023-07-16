@@ -164,3 +164,20 @@ User::where('name','!=','Ruiz')->orWhere('email','info@mail.com')->orderBy('emai
 ```
  User::findOrFail(1)
 ```
+## Consultas Crudas
+
+Usar consultas crudas con DB
+- Insertamos esta linea de codigo
+```
+use Illuminate\Support\Facades\DB;
+```
+
+- Select * from users
+```
+$users = DB::select(DB::raw("SELECT * FROM users"));
+```
+
+- INSERT INTO users VALUES ('','')
+```
+$users = DB::insert(DB::raw("INSERT INTO users VALUES ('name','email')"));
+```
