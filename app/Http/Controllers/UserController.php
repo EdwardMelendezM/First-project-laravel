@@ -5,17 +5,22 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
     public function index(){
         //Metodo select all  -  find
-        // $users = User::all(); 
-        
+        // $users = User::all();  
         // $users = User::where('name','!=','Ruiz')->limit(10,2)->get();
         
-        $users = User::find(1);
+        // $users = User::find(1);
         // $users = User::where('name','!=','Ruiz')->orWhere    ('email','info@mail.com')->orderBy('email','asc')->limit(10,2)->get();
+        $users = DB::select(DB::raw("SELECT * FROM users"));
+
+        $users = DB::insert(DB::raw("INSERT INTO users VALUES ('name','email')"));
+
 
         return view('index',compact('users'));
     }

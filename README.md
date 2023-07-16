@@ -140,3 +140,27 @@ php artisan make:model Note
 ```
 php artisan make:model Author --migration
 ```
+
+## Eloquent (consultas)
+
+Las consultas mas usadas con ayuda de Eloquent (ORM), como ejemplo para User
+
+- Regresar todos los usuarios
+```
+User::all()
+```
+
+- Regresar todos los usarios que tengan como campo name distinto a Ruiz, ademas que se limite a 10 usuario, dandose un salto de 2. Cuando concatenamos mas de dos al final utilizamos get()
+```
+User::where('name','!=','Ruiz')->limit(10,2)->get()
+```
+
+- De la misma forma que la anterior, pero ordenando de forma ascendente por el campo email y dondole una opcion Or para los campos de email
+```
+User::where('name','!=','Ruiz')->orWhere('email','info@mail.com')->orderBy('email','asc')->limit(10,2)->get()
+```
+
+- Buscar un usuario por su id, si no lo encuentra que haga error controlado
+```
+ User::findOrFail(1)
+```
